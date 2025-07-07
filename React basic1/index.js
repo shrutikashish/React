@@ -6,10 +6,12 @@
    //<h1></h1>
    // </div>
 //</div>
-let parent = React.createElement("div",{
-    id:"headers"}, React.createElement("div",{id:"child"},
-        React.createElement("h1",{}, "I am h1 tag")));
-const roots = ReactDOM.createRoot(document.getElementById("roots"));
+
+let roots= ReactDOM.createRoot(document.getElementById("roots"));
+let parent = React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"}),
+             React.createElement("h1",{id:"headings"},"I am an h1 tag")
+)
 roots.render(parent)
+
 
 
