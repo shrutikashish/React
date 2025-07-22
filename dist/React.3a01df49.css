@@ -1,20 +1,54 @@
-#heading {
-  color: #ff00e1;
-}
+h1 {
+  color: red;
+  font-family: Courier New, Courier, monospace;
+  font-size: 40px;
 
-#headings {
-  background-color: #00f;
-}
+  & .header {
+    border: 1px solid #000;
+    justify-content: space-between;
+    display: flex;
+  }
 
-.middle {
-  background-color: #dc143c;
-}
+  & .logo {
+    width: 200px;
+  }
 
-.big {
-  background-color: #7fff00;
-}
+  & .nav-items {
+    padding: 0 20px;
+  }
 
-.big2 {
-  background-color: #006400;
+  & .nav-items > ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  & .nav-items > ul > li {
+    margin: 10px;
+    padding: 10px;
+    font-size: 25px;
+  }
+
+  & .res-card {
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  & .res-container {
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  & .res-card:hover {
+    cursor: pointer;
+    border: 1px solid #000;
+  }
+
+  & .res-logo {
+    width: 190px;
+    height: 120px;
+    padding: 5px;
+  }
 }
 /*# sourceMappingURL=React.3a01df49.css.map */

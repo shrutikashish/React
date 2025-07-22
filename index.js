@@ -1,66 +1,82 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
+/* 
+to make any app what we should now structure and what we  need to build
+we make food app so here we need
+ Header 
+ -logo
+ - nav items
  
-// we see here how we create react element and render in dom. 
-// Now we see how we create nested element in dom through react.
-// In dom we want create nested element like this
- //<div id = parent >
-   // <div id = child>
-   //<h1></h1>
-   // </div>
-//</div>
+ Body
+ -Search
+ -RestaurantContainer
+ -RestaurantCard
 
-let roots= ReactDOM.createRoot(document.getElementById("roots"));
-let parent = React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"}),
-             React.createElement("h1",{id:"headings"},"I am an h1 tag")
-)
-roots.render(parent)
+ Footer
+ -copyright
+ -links
+ -Address
+ -Contacts
+*/
 
-//If we want sibling of children then we use Array
-//<div id = parents>
-// <div id = childs>
-//<h1> I am big one</h1>
-//<h2> I am small one</h2>
-// </div>
-//</div>
+
+const Header = ()=>{
+    return(
+        <div className="header">
+            <div className="logo-container">
+            <img  className="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdowOPjag-hQKDHQXhyue9wzFdZ9H1hLW09Q&s"></img>
+         </div>
+         <div className="nav-items">
+         <ul>
+            <li>Name</li>
+            <li>About US</li>
+            <li>Cart</li>
+            <li>Contact Us</li>
+         </ul>
+         </div>
+        </div>
+    )
+}
+
+const RestaurantCard = () =>{
+    return (
+        <div className="res-card" style = {{ backgroundColor: "#f0f0f0" }}>
+            <img  className="res-logo"alt="res-logo"  src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e0vvulfbahjxjz6k4uwi"></img>
+            <h3>Meghana Foods</h3>
+            <h4>Biryani, North Indian,Asian</h4>
+            <h4>4.4 stars</h4>
+            <h4>38 minutes</h4>
+        </div>
+    )
+}
+
+const Body = () => {
+    return(
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+                <RestaurantCard />
+                <RestaurantCard />
+            </div>
+        </div>
+    )
+}
+
+const AppLayOut = ()=>{
+    return(
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+
+    )
+}
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const middleParent = React.createElement(
-    "div",{id: "parent"},
-    React.createElement("div",{id:"child1"},
-       [ React.createElement("h1",{class:"middle"},"I am big one"),
-        React.createElement("h2",{class:"middle"},"I am small one"),
-       ]
-    )
 
-)
-root.render(middleParent)
-
-// If we want  to create 2 children and 2 sibling in dom through react
-//<div id = parent >
-   // <div id = child1>
-     //<h1> h1 tag</h1>
-      //<h2> h2 tag
-   // </div>
-    // <div id = child2>
-     //<h1> h1 tag</h1>
-      //<h2> h2 tag
-   // </div>
-//</div>
-// here we see 2 h1 tag in child1 and 2 h2 tag in child2
-
-let root1 = ReactDOM.createRoot(document.getElementById("root1"));
-let bigParent = React.createElement("div",{id:"parent1"}, React.createElement("div",{id:"child1"},
-   [
-      React.createElement("h1",{class:"big"},"I am supreme"),
-      React.createElement("h2",{class:"big"},"I am frontend")
-   ],
-   React.createElement("div",{id:"parent2"}, React.createElement("div",{id:"child2"},
-      [
-         React.createElement("h1",{class:"big2"},"I am smarter than upperOne"),
-         React.createElement("h2",{class:"big2"},"I am backend")
-      ]
-   )
-   )
-   
-)
-);
-root1.render(bigParent)
+ 
+root.render(<AppLayOut />)
